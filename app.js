@@ -6,8 +6,7 @@ var logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
-var cors = require('cors')
-
+var cors = require("cors");
 
 var dashboardRouter = require("./app/dashborad/router");
 var categoryRouter = require("./app/category/router");
@@ -18,14 +17,11 @@ var paymentRouter = require("./app/payment/router");
 var usersRouter = require("./app/users/router");
 var transactionRouter = require("./app/transaction/router");
 const playerRouter = require("./app/player/router");
-const authRouter = require('./app/auth/router');
-
-
+const authRouter = require("./app/auth/router");
 
 const app = express();
 const URL = `/api/v1`;
-app.use(cors())
-
+app.use(cors());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -61,7 +57,6 @@ app.use("/voucher", voucherRouter);
 app.use("/bank", bankRouter);
 app.use("/payment", paymentRouter);
 app.use("/transaction", transactionRouter);
-
 
 // api
 app.use(`${URL}/players`, playerRouter);
