@@ -28,7 +28,7 @@ module.exports = {
         .populate("category")
         .populate("nominals")
         .populate("user", "_id name phoneNumber");
-      const payment = await Payment.find();
+      const payment = await Payment.find().populate('banks');
       const detail = {
         voucher,
         payment,
