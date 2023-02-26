@@ -28,7 +28,7 @@ module.exports = {
         .populate("category")
         .populate("nominals")
         .populate("user", "_id name phoneNumber");
-      const payment = await Payment.find().populate('banks');
+      const payment = await Payment.find().populate("banks");
       const detail = {
         voucher,
         payment,
@@ -193,7 +193,7 @@ module.exports = {
         {
           $group: {
             _id: "$category",
-            valeu: { $sum: "$value" },
+            value: { $sum: "$value" },
           },
         },
       ]);
